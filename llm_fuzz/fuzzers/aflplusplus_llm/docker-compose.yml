@@ -1,0 +1,47 @@
+version: "2.4"
+services:
+  llm_fuzz:
+    build:
+      context: .
+      dockerfile: llm.Dockerfile
+    volumes:
+      - ./logs:/logs
+    tty: true
+    environment:
+      - REDIS_HOST=localhost
+      - REDIS_PASSWORD=password
+      - LLM_HOST=localhost
+      - BENCHMARK_NAME=$BENCHMARK_NAME
+      - LLM_MODEL=$LLM_MODEL
+    depends_on:
+      - redis_service
+    network_mode: host
+
+  redis_service:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    command: >
+      --requirepass password
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli --pass password ping | grep PONG" ]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    hostname: redis_service
+    network_mode: host
+
+  llm_service:
+    build:
+      context: .
+      dockerfile: ollama.Dockerfile
+    container_name: llm_service
+    entrypoint: /tmp/run_ollama.sh
+    ports:
+      - "11434:11434"
+    restart: always
+    tty: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    network_mode: host
