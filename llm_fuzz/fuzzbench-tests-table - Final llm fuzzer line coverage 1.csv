@@ -1,0 +1,57 @@
+,,,,,,,,,,,,,,,
+,,,Line coverage  (runtime 1),,,,,,,,Line coverage  (runtime 2),,,,
+,Benchmarks,Total # of functions,Ollama - llama3.3,llama3.3 - 1 shot,llama3.3 - 2 shot,llama3.3 - 3 shot,AFL++,,Benchmarks,Total # of functions,Ollama - llama3.3,llama3.3 - 1 shot,llama3.3 - 2 shot,llama3.3 - 3 shot,AFL++
+,freetype2_ftfuzzer,61918,27992,27795,,27801,27689,,freetype2_ftfuzzer,61918,29140,29380,,29497,28688
+,libxml2_xml,87154,13821,19938,,13821,21154,,libxml2_xml,87154,13821,13821,,13821,21603
+,libpng_libpng_read_fuzzer,13217,4870,4904,,4904,4912,,libpng_libpng_read_fuzzer,13217,4901,4870,,4862,4948
+,bloaty_fuzz_target,202193,28247,28247,,29720,30447,,bloaty_fuzz_target,202193,28917,28876,,28247,30905
+,curl_curl_fuzzer_http,167407,25197,25284,,25093,25676,,curl_curl_fuzzer_http,167407,25162,25133,,25215,26089
+,harfbuzz_hb-shape-fuzzer,43447,17387,17387,,17387,21528,,harfbuzz_hb-shape-fuzzer,43447,17387,17387,,17387,22066
+,jsoncpp_jsoncpp_fuzzer,3977,1031,1031,,28,1039,,jsoncpp_jsoncpp_fuzzer,3977,28,28,,28,1039
+,lcms_cms_transform_fuzzer,16131,261,261,,3603,4211,,lcms_cms_transform_fuzzer,16131,4169,4540,,4126,3713
+,libjpeg-turbo_libjpeg_turbo_fuzzer,19925,5015,5015,,5015,5022,,libjpeg-turbo_libjpeg_turbo_fuzzer,19925,5015,5015,,5015,5030
+,libpcap_fuzz_both,15910,5088,4964,,5349,5159,,libpcap_fuzz_both,15910,5016,4796,,4812,5570
+,mbedtls_fuzz_dtlsclient,43101,5891,5891,,5891,8108,,mbedtls_fuzz_dtlsclient,43101,7233,7482,,5891,8202
+,openh264_decoder_fuzzer,19156,14156,14160,,14140,14143,,openh264_decoder_fuzzer,19156,14432,14334,,14244,14365
+,openssl_x509,119567,15509,15509,,15509,15582,,openssl_x509,119567,15509,15509,,15509,15600
+,openthread_ot-ip6-send-fuzzer,65067,11909,11287,,11981,11985,,openthread_ot-ip6-send-fuzzer,65067,11928,11710,,11851,11994
+,proj4_proj_crs_to_crs_fuzzer,136246,14748,13951,,14801,14850,,proj4_proj_crs_to_crs_fuzzer,136246,17016,16639,,17140,17560
+,re2_fuzzer,8382,5412,5384,,5421,5521,,re2_fuzzer,8382,5505,5492,,5512,5520
+,sqlite3_ossfuzz,66157,22964,22964,,22964,35974,,sqlite3_ossfuzz,66157,22964,22964,,22964,47441
+,stb_stbi_read_fuzzer,4618,3061,3061,,3061,3438,,stb_stbi_read_fuzzer,4618,3061,3061,,3061,3481
+,systemd_fuzz-link-parser,2618,722,712,,708,712,,systemd_fuzz-link-parser,2618,712,712,,711,712
+,vorbis_decode_fuzzer,8745,2860,2860,,2864,2886,,vorbis_decode_fuzzer,8745,2872,2868,,2873,2886
+,woff2_convert_woff2ttf_fuzzer,11465,2374,2374,,2374,3156,,woff2_convert_woff2ttf_fuzzer,11465,2374,2374,,2374,3222
+,php_php-fuzz-parser_0dbedb (crash),260723,41512,41361,,41171,41508,,php_php-fuzz-parser_0dbedb (crash),260723,42182,41758,,41769,41917
+,mbedtls_fuzz_dtlsclient_7c6b0e (crash),42376,7618,7630,,7559,7495,,mbedtls_fuzz_dtlsclient_7c6b0e (crash),42376,7570,7645,,7685,7566
+,libxml2_xml_e85b9b (crash),87535,21335,19249,,19229,21417,,libxml2_xml_e85b9b (crash),87535,18673,13860,,21398,26017
+,harfbuzz_hb-shape-fuzzer_17863b (crash),39718,16608,16608,,16608,18448,,harfbuzz_hb-shape-fuzzer_17863b (crash),39718,16608,16608,,16608,19529
+,bloaty_fuzz_target_52948c (crash),202193,28244,28872,,28893,29612,,bloaty_fuzz_target_52948c (crash),202193,29236,28521,,29467,30627
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions,,,shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions
+0,freetype2_ftfuzzer,27992,27804,27241,27596,61918,,,0,freetype2_ftfuzzer,29140,27593,28905,29085,61918
+0,libpng_libpng_read_fuzzer,4870,4860,4836,4831,13217,,,0,libpng_libpng_read_fuzzer,4901,4899,4937,4908,13217
+0,curl_curl_fuzzer_http,25197,25237,25325,25144,167407,,,0,curl_curl_fuzzer_http,25162,25255,25073,25275,167407
+0,libpcap_fuzz_both,5088,4960,4965,4703,15910,,,0,libpcap_fuzz_both,5016,4565,4790,4893,15910
+0,openh264_decoder_fuzzer,14156,14124,14231,14289,19156,,,0,openh264_decoder_fuzzer,14432,14434,14409,14404,19156
+0,openthread_ot-ip6-send-fuzzer,11909,11902,11782,11764,65067,,,0,openthread_ot-ip6-send-fuzzer,11928,11812,11943,11938,65067
+,,,,,,,,,,,,,,,
+shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions,,,shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions
+1,freetype2_ftfuzzer,27795,27627,27599,26952,61918,,,1,freetype2_ftfuzzer,29380,25553,29182,28872,61918
+1,libpng_libpng_read_fuzzer,4904,4895,4900,4869,13217,,,1,libpng_libpng_read_fuzzer,4862,4837,4871,4831,13217
+1,curl_curl_fuzzer_http,25284,25291,25158,25186,167407,,,1,curl_curl_fuzzer_http,25133,25180,25111,25153,167407
+1,libpcap_fuzz_both,4964,4891,5323,4963,15910,,,1,libpcap_fuzz_both,4796,5013,5352,4838,15910
+1,openh264_decoder_fuzzer,14160,14146,14082,14260,19156,,,1,openh264_decoder_fuzzer,14334,14397,14414,14423,19156
+1,openthread_ot-ip6-send-fuzzer,11287,11665,11907,11902,65067,,,1,openthread_ot-ip6-send-fuzzer,11710,11981,11859,11965,65067
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions,,,shot,Benchmarks,llama3.3,deepseek-r1,qwq-32b,gemma3,Total # of functions
+3,freetype2_ftfuzzer,27801,27144,27162,27811,61918,,,3,freetype2_ftfuzzer,29497,28993,28630,29157,61918
+3,libpng_libpng_read_fuzzer,4904,4875,4854,4831,13217,,,3,libpng_libpng_read_fuzzer,4862,4871,4836,4865,13217
+3,curl_curl_fuzzer_http,25093,25374,25207,25095,167407,,,3,curl_curl_fuzzer_http,25215,25354,25043,25391,167407
+3,libpcap_fuzz_both,5349,4495,4617,4709,15910,,,3,libpcap_fuzz_both,4812,4928,4650,4937,15910
+3,openh264_decoder_fuzzer,14140,14288,14294,14228,19156,,,3,openh264_decoder_fuzzer,14244,14410,14384,14362,19156
+3,openthread_ot-ip6-send-fuzzer,11981,11840,11987,11932,65067,,,3,openthread_ot-ip6-send-fuzzer,11851,11976,11688,11969,65067

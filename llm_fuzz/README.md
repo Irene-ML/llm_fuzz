@@ -8,8 +8,21 @@ It enables large-scale, reproducible experiments on LLM-guided mutation-based fu
 supporting prompt engineering, SCR and RDR analysis, and multi-model benchmarking 
 in a distributed environment.
 
+View paper in: [https://arxiv.org/abs/2509.19533](https://arxiv.org/abs/2509.19533)
+
 ## Deployment
 [View detailed README in `fuzzers/aflplusplus_llm/README.md`](fuzzers/aflplusplus_llm/README.md)
+
+## Data
+This project also contains experiment data (spreadsheets):
+* fuzzbench-tests-table - Final fuzzer branch coverage.csv
+* fuzzbench-tests-table - Final fuzzer line coverage.csv
+* fuzzbench-tests-table - Final fuzzer region coverage.csv
+* fuzzbench-tests-table - Final fuzzers function coverage.csv
+* fuzzbench-tests-table - Final llm function coverage 1.csv
+* fuzzbench-tests-table - Final llm fuzzer branch coverage 1.csv
+* fuzzbench-tests-table - Final llm fuzzer line coverage 1.csv
+* fuzzbench-tests-table - Final llm fuzzer region coverage 1.csv  
 
 ## FuzzBench: Fuzzer Benchmarking As a Service
 
