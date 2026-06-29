@@ -1,4 +1,4 @@
-FROM ollama/ollama
+FROM ollama/ollama:0.5.7
 
 COPY ./run_ollama.sh /tmp/run_ollama.sh
 

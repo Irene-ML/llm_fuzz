@@ -17,9 +17,9 @@ services:
   redis_service:
     image: redis:latest
     command: >
-      --requirepass password
+      --requirepass password --port 6380
     healthcheck:
-      test: [ "CMD-SHELL", "redis-cli --pass password ping | grep PONG" ]
+      test: [ "CMD-SHELL", "redis-cli -p 6380 --pass password ping | grep PONG" ]
       interval: 1s
       timeout: 3s
       retries: 5

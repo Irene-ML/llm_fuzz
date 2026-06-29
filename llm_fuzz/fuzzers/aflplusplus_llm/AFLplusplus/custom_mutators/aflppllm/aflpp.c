@@ -10,7 +10,7 @@
 // NOTE: To make the system work, please change REDIS_HOST to your IP
 #define REDIS_HOST "127.0.0.1"
 #define REDIS_HOST_WIN "host.docker.internal"
-#define REDIS_PORT 6379
+#define REDIS_PORT 6380
 #define REDIS_PASSWORD "password"
 
 redisContext *c;
@@ -113,7 +113,7 @@ size_t afl_custom_fuzz(my_mutator_t *data, uint8_t *buf, size_t buf_size,
     // freeReplyObject(reply);
 
     reply =
-        (redisReply *)redisCommand(c, "RPUSH C2P %b", out_buf, out_buf_len);
+        (redisReply *)redisCommand(c, "RPUSH C2P %b", *out_buf, out_buf_len);
     if (reply == NULL) { printf("Error sending data: %s\n", c->errstr); }
     freeReplyObject(reply);
 
@@ -138,9 +138,12 @@ size_t afl_custom_fuzz(my_mutator_t *data, uint8_t *buf, size_t buf_size,
         #endif
         
         // set mutated buffer
+        size_t copy_len = retrieved_data_len;
+        if (copy_len > max_size) copy_len = max_size;
+
         memcpy(data->buf, retrieved_data, retrieved_data_len);
         *out_buf = data->buf;
-        return retrieved_data_len;
+        return copy_len;
         
       } else if (reply->type != REDIS_REPLY_NIL) {
         // if it is not empty message (no item in the queue)

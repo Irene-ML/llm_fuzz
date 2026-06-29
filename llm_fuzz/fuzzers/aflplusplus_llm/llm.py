@@ -26,7 +26,7 @@ service_port = 11434
 ollama_client, model = llm_ollama.load_model(service_host, service_port, model)
 
 # Connect to Redis
-redisdb = redis.Redis(host='localhost', port=6379, password='password', decode_responses=False)
+redisdb = redis.Redis(host='localhost', port=6380, password='password', decode_responses=False)
 
 # # load library_info for LLM
 # with open("library_info.json", "r") as file:
@@ -64,12 +64,22 @@ def parse_response(response):
 def consume_messages():
 
     message_count=0
+
     while True:
+        consumed_message = None
         try:
-            consumed_message = redisdb.blpop('C2P', timeout=30)
-        except:
-            consumed_message = repr(consumed_message)
-            print(f"Decoded consumed message: {consumed_message}")
+            consumed_message = redisdb.blpop('C2P', timeout=50)
+        except redis.exceptions.TimeoutError:
+            pass
+        except Exception as err:
+            try:
+                if consumed_message is not None:
+                    consumed_message = repr(consumed_message)
+                    print(f"Decoded consumed message: {consumed_message}")
+                else:
+                    print(f"Error occurred, no message was fetched. Error: {err}")
+            except Exception as decode_err:
+                    print(f"Error decoding consumed message: {decode_err}")
 
         if consumed_message:
             # message is in tupple for blpop.
@@ -128,7 +138,7 @@ def consume_messages():
                 redisdb.rpush('P2C', mutate_result)
 
         else:
-            print("Queue is empty after 30s timeout. Waiting...")
+            print("Queue is empty after 50s timeout. Waiting...")
 
 if __name__ == "__main__":
     print("Starting message consumer...")

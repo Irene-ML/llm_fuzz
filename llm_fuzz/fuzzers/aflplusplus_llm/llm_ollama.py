@@ -205,7 +205,9 @@ def ask_ollama(server, port, hex_msg, library_info, model, shot=0):
                 host=f'http://{server}:{port}'
             ).chat(model=model,  
             options = {
-                'temperature': 0
+                'temperature': 0,
+                'num_ctx': 16384,
+                'num_predict': 4096
             }, 
             messages=[
             {
