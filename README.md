@@ -156,5 +156,6 @@ artifacts/
 ├── fuzzbench-tests-table*.csv
 ├── stats/
 │    └── *stats.csv
-└── log-analysis-table.csv
+└── logs
+     └── log-analysis-table-part-*.csv        
 ```
