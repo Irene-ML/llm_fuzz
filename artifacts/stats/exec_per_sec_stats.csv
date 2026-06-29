@@ -1,0 +1,4 @@
+benchmark,fuzzer,trials,mean_execs_per_sec
+freetype2_ftfuzzer,ablation,3,5388.16
+freetype2_ftfuzzer,afl++,3,5743.78
+freetype2_ftfuzzer,llm,3,5321.23

@@ -1,0 +1,5 @@
+benchmark,duration,n_llm,n_base,llm_median,llm_ci_lo,llm_ci_hi,afl_median,afl_ci_lo,afl_ci_hi,A12,p_mwu,significant,truncated
+freetype2_ftfuzzer,1h,5,5,8813.0,8686.0,9708.0,8412.0,7602.0,9845.0,0.8,0.15079365079365079,False,[]
+freetype2_ftfuzzer,4h,5,5,9369.0,9109.0,10375.0,9667.0,2835.0,10082.0,0.36,0.5476190476190477,False,[149]
+lcms_cms_transform_fuzzer,1h,5,5,817.0,724.0,864.0,1228.0,743.0,1663.0,0.32,0.42063492063492064,False,[]
+lcms_cms_transform_fuzzer,4h,5,5,1506.0,1388.0,1764.0,1452.0,1345.0,1771.0,0.52,1.0,False,[]
