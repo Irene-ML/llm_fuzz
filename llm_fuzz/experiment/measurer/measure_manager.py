@@ -217,7 +217,8 @@ def _query_ids_of_measured_trials(experiment: str):
     snapshots."""
     with db_utils.session_scope() as session:
         trials_and_snapshots_query = session.query(models.Snapshot).options(
-            orm.joinedload('trial'))
+            orm.joinedload(models.Snapshot.trial)
+        )
         experiment_trials_filter = models.Snapshot.trial.has(
             experiment=experiment, preempted=False)
         experiment_trials_and_snapshots_query = (
