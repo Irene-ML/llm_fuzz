@@ -155,6 +155,7 @@ Contains experimental results, statistical analysis tables and log analysis csv 
 artifacts/
 ├── fuzzbench-tests-table*.csv
 ├── stats/
+│    ├── evaluation-ratio.csv
 │    └── *stats.csv
 └── logs
      └── log-analysis-table-part-*.csv        
